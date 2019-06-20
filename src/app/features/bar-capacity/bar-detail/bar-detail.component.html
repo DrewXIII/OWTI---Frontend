@@ -1,0 +1,149 @@
+<div class="container-fluid pt-5">
+  <div
+    id="principal"
+    [ngStyle]="{
+      'background-image': 'url(' + barDetail.userProfile.avatarUrl[0] + ')',
+      'background-repeat': 'no-repeat',
+      height: '100%',
+      'background-size': 'cover',
+      'background-position': 'center',
+      'background-blend-mode': 'darken',
+      'background-color': 'rgba(0, 0, 0, 0.5)'
+    }"
+  >
+    <!-- [style.backgroundImage]="'url(' + barDetail.userProfile.avatarUrl[0] + ')'" -->
+    <h1 class="d-flex justify-content-center pt-5">
+      {{ barDetail && barDetail.userProfile && barDetail.userProfile.fullName }}
+    </h1>
+    <p class="d-flex justify-content-center">
+      {{ today | date: "dd MMM yy" }}
+    </p>
+
+    <ow-circle-progress
+      class="d-flex justify-content-center"
+    ></ow-circle-progress>
+    <h5 id="capacity" class="d-flex justify-content-center">
+      Capacity
+    </h5>
+    <div class="d-flex justify-content-center">
+      <span>
+        {{
+          barDetail &&
+            barDetail.userCapacityProfile &&
+            barDetail.userCapacityProfile.capacity
+        }}
+      </span>
+      /
+      <span>
+        {{
+          barDetail &&
+            barDetail.userProfile &&
+            barDetail.userProfile.details &&
+            barDetail.userProfile.details.maxCapacity
+        }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="contact" class="container-fluid ml-3">
+      <h2 class="mt-2">CONTACT</h2>
+      <div>
+        <div class="container my-3">
+          <div class="mb-1">
+            <span>
+              {{
+                barDetail &&
+                  barDetail.userProfile &&
+                  barDetail.userProfile.address &&
+                  barDetail.userProfile.address.streetAddress
+              }}
+            </span>
+          </div>
+          <div>
+            <span>
+              {{
+                barDetail &&
+                  barDetail.userProfile &&
+                  barDetail.userProfile.address &&
+                  barDetail.userProfile.address.addressLocality
+              }}
+            </span>
+            ,
+            <span>
+              {{
+                barDetail &&
+                  barDetail.userProfile &&
+                  barDetail.userProfile.address &&
+                  barDetail.userProfile.address.addressRegion
+              }}
+            </span>
+            ,
+            <span>
+              {{
+                barDetail &&
+                  barDetail.userProfile &&
+                  barDetail.userProfile.address &&
+                  barDetail.userProfile.address.postalCode
+              }}
+            </span>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+
+        <div class="container mb-3">
+          <div>
+            <span>
+              {{
+                barDetail &&
+                  barDetail.userProfile &&
+                  barDetail.userProfile.contact &&
+                  barDetail.userProfile.contact.phoneNumber
+              }}
+            </span>
+            <span class="ml-3">
+              {{
+                barDetail &&
+                  barDetail.userProfile &&
+                  barDetail.userProfile.contact &&
+                  barDetail.userProfile.contact.email
+              }}
+            </span>
+          </div>
+        </div>
+
+        <!-- OPENING HOURS -->
+
+        <div class="container mb-3">
+          <div>
+            {{
+              barDetail &&
+                barDetail.userProfile &&
+                barDetail.userProfile.details &&
+                barDetail.userProfile.details.openingHours
+            }}
+          </div>
+        </div>
+
+        <!-- VISIT WEBSITE -->
+
+        <div>
+          <a
+            id="visit"
+            class="d-flex"
+            class="btn btn-lg"
+            [href]="barDetail.userProfile.preferences.web"
+          >
+            <span id="web" class="justify-content-center align-items-center">
+              VISIT WEBSITE
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- <div>
+      mapa
+    </div> -->
+  </div>
+</div>

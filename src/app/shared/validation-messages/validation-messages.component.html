@@ -1,0 +1,27 @@
+<ng-container *ngIf="control?.dirty || control?.touched">
+  <div class="invalid-feedback" *ngIf="control.hasError('required')">
+    <i class="fa fa-exclamation-triangle"></i>This field is required
+  </div>
+
+  <div class="invalid-feedback" *ngIf="control.hasError('mailformedMail')">
+    <i class="fa fa-exclamation-triangle"></i>This mail is not valid
+  </div>
+
+  <div class="invalid-feedback" *ngIf="control.hasError('missingAt')">
+    <i class="fa fa-exclamation-triangle"></i>You need an @
+  </div>
+
+  <div class="invalid-feedback" *ngIf="control.hasError('minLength')">
+    <i class="fa fa-exclamation-triangle"></i>The length is invalid
+  </div>
+</ng-container>
+
+<ng-container *ngIf="group?.dirty || group?.touched">
+  <div
+    class="invalid-feedback"
+    *ngIf="control.valid && group?.hasError('passwordMissMatch')"
+  >
+    <i class="fa fa-exclamation-triangle"></i> Password and confirmation
+    password should match
+  </div>
+</ng-container>

@@ -1,0 +1,23 @@
+<form
+  class="container-fluid p-5"
+  [formGroup]="updateUserCapacityForm"
+  [owMarkAsTouched]="updateUserCapacityForm"
+  (ngSubmit)="updateUserCapacity()"
+>
+  <div class="row justify-content-start pt-3">
+    <div class="form-group col-3">
+      <h1>Current Capacity</h1>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="capacity"
+        placeholder="Current Capacity"
+      />
+      <ow-validation-messages
+        [control]="updateUserCapacityForm.get('capacity')"
+      ></ow-validation-messages>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,15 @@
+<div id="myModal" class="modal" *ngIf="modalService.opened">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center mt-3">{{ modalService.title }}</h3>
+        <button type="button" class="close" (click)="modalService.close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ow-register></ow-register>
+      </div>
+    </div>
+  </div>
+</div>
