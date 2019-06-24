@@ -4,23 +4,34 @@
   [owMarkAsTouched]="updateProfileForm"
   (ngSubmit)="updateProfile()"
 >
-  <div class="row justify-content-start pt-3">
-    <div>
-      <button type="button" class="btn btn-link" routerLink="/capacity">
-        Go Back
+  <div class="row pt-3">
+    <div class="col-lg-2">
+      <button
+        id="back"
+        type="button"
+        class="btn btn-dark"
+        routerLink="/capacity"
+      >
+        <i class="fas fa-undo-alt"></i>
       </button>
     </div>
-    <div id="name" class="form-group">
+    <div id="name" class="form-group col-lg-8">
       <h1 class="row justify-content-center">NAME</h1>
-      <input
-        class="form-control"
-        type="text"
-        formControlName="fullName"
-        placeholder="Enter your name"
-      />
-      <ow-validation-messages
-        [control]="updateProfileForm.get('fullName')"
-      ></ow-validation-messages>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="fullName"
+              placeholder="Enter your name"
+            />
+            <ow-validation-messages
+              [control]="updateProfileForm.get('fullName')"
+            ></ow-validation-messages>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -28,31 +39,33 @@
 
   <div formGroupName="details">
     <h2>DETAILS</h2>
-    <div class="row justify-content-around">
-      <div id="maxCapacity" class="form-group col-6">
-        <label>Max Capacity</label>
-        <input
-          class="form-control"
-          type="number"
-          formControlName="maxCapacity"
-          placeholder="Enter your max capacity"
-        />
-        <ow-validation-messages
-          [control]="updateProfileForm.get('details.maxCapacity')"
-        ></ow-validation-messages>
-      </div>
+    <div class="container">
+      <div class="row">
+        <div id="maxCapacity" class="form-group col-6">
+          <label>Max Capacity</label>
+          <input
+            class="form-control"
+            type="number"
+            formControlName="maxCapacity"
+            placeholder="Enter your max capacity"
+          />
+          <ow-validation-messages
+            [control]="updateProfileForm.get('details.maxCapacity')"
+          ></ow-validation-messages>
+        </div>
 
-      <div id="openingHours" class="form-group col-6">
-        <label>Opening Hours</label>
-        <input
-          class="form-control"
-          type="text"
-          formControlName="openingHours"
-          placeholder="Enter your opening hours"
-        />
-        <ow-validation-messages
-          [control]="updateProfileForm.get('details.openingHours')"
-        ></ow-validation-messages>
+        <div id="openingHours" class="form-group col-6">
+          <label>Opening Hours</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="openingHours"
+            placeholder="Enter your opening hours"
+          />
+          <ow-validation-messages
+            [control]="updateProfileForm.get('details.openingHours')"
+          ></ow-validation-messages>
+        </div>
       </div>
     </div>
   </div>
@@ -61,58 +74,60 @@
 
   <div formGroupName="address">
     <h2>ADDRESS</h2>
-    <div class="row justify-content-start">
-      <div id="streetAddress" class="form-group col-6">
-        <label>Street</label>
-        <input
-          class="form-control"
-          type="text"
-          formControlName="streetAddress"
-          placeholder="Street"
-        />
-        <ow-validation-messages
-          [control]="updateProfileForm.get('address.streetAddress')"
-        ></ow-validation-messages>
-      </div>
-
-      <div class="form-row pl-3">
-        <div id="addressLocality" class="form-group col-6">
-          <label>Locality</label>
+    <div class="container">
+      <div class="row">
+        <div id="streetAddress" class="form-group col-6">
+          <label>Street</label>
           <input
             class="form-control"
             type="text"
-            formControlName="addressLocality"
-            placeholder="Locality"
+            formControlName="streetAddress"
+            placeholder="Street"
           />
           <ow-validation-messages
-            [control]="updateProfileForm.get('address.addressLocality')"
+            [control]="updateProfileForm.get('address.streetAddress')"
           ></ow-validation-messages>
         </div>
 
-        <div id="addressRegion" class="form-group col-4">
-          <label>Region</label>
-          <input
-            class="form-control"
-            type="text"
-            formControlName="addressRegion"
-            placeholder="Region"
-          />
-          <ow-validation-messages
-            [control]="updateProfileForm.get('address.addressRegion')"
-          ></ow-validation-messages>
-        </div>
+        <div class="form-row pl-3">
+          <div id="addressLocality" class="form-group col-6">
+            <label>Locality</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="addressLocality"
+              placeholder="Locality"
+            />
+            <ow-validation-messages
+              [control]="updateProfileForm.get('address.addressLocality')"
+            ></ow-validation-messages>
+          </div>
 
-        <div id="postalCode" class="form-group col-2">
-          <label>ZIP</label>
-          <input
-            class="form-control"
-            type="text"
-            formControlName="postalCode"
-            placeholder="ZIP"
-          />
-          <ow-validation-messages
-            [control]="updateProfileForm.get('address.postalCode')"
-          ></ow-validation-messages>
+          <div id="addressRegion" class="form-group col-4">
+            <label>Region</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="addressRegion"
+              placeholder="Region"
+            />
+            <ow-validation-messages
+              [control]="updateProfileForm.get('address.addressRegion')"
+            ></ow-validation-messages>
+          </div>
+
+          <div id="postalCode" class="form-group col-2">
+            <label>ZIP</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="postalCode"
+              placeholder="ZIP"
+            />
+            <ow-validation-messages
+              [control]="updateProfileForm.get('address.postalCode')"
+            ></ow-validation-messages>
+          </div>
         </div>
       </div>
     </div>
@@ -122,18 +137,20 @@
 
   <div formGroupName="preferences">
     <h2>PREFERENCES</h2>
-    <div class="row justify-content-start">
-      <div id="web" class="form-group col-6">
-        <label>Web</label>
-        <input
-          class="form-control"
-          type="text"
-          formControlName="web"
-          placeholder="Enter your Web url"
-        />
-        <ow-validation-messages
-          [control]="updateProfileForm.get('preferences.web')"
-        ></ow-validation-messages>
+    <div class="container">
+      <div class="row">
+        <div id="web" class="form-group col-6">
+          <label>Web</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="web"
+            placeholder="Enter your Web url"
+          />
+          <ow-validation-messages
+            [control]="updateProfileForm.get('preferences.web')"
+          ></ow-validation-messages>
+        </div>
       </div>
     </div>
   </div>
@@ -142,33 +159,45 @@
 
   <div formGroupName="contact">
     <h2>CONTACT</h2>
-    <div class="row justify-content-around">
-      <div id="email" class="form-group col-6">
-        <label>Email</label>
-        <input
-          class="form-control"
-          type="text"
-          formControlName="email"
-          placeholder="Email"
-        />
-        <ow-validation-messages
-          [control]="updateProfileForm.get('contact.email')"
-        ></ow-validation-messages>
-      </div>
+    <div class="container">
+      <div class="row">
+        <div id="email" class="form-group col-6">
+          <label>Email</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="email"
+            placeholder="Email"
+          />
+          <ow-validation-messages
+            [control]="updateProfileForm.get('contact.email')"
+          ></ow-validation-messages>
+        </div>
 
-      <div id="phoneNumber" class="form-group col-6">
-        <label>Phone Number</label>
-        <input
-          class="form-control"
-          type="text"
-          formControlName="phoneNumber"
-          placeholder="Phone Number"
-        />
-        <ow-validation-messages
-          [control]="updateProfileForm.get('contact.phoneNumber')"
-        ></ow-validation-messages>
+        <div id="phoneNumber" class="form-group col-6">
+          <label>Phone Number</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="phoneNumber"
+            placeholder="Phone Number"
+          />
+          <ow-validation-messages
+            [control]="updateProfileForm.get('contact.phoneNumber')"
+          ></ow-validation-messages>
+        </div>
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Save</button>
+  <div class="container">
+    <div class="row justify-content-center">
+      <button
+        id="save"
+        type="submit"
+        class="btn btn-dark col-3 col-md-2 col-lg-2"
+      >
+        Save
+      </button>
+    </div>
+  </div>
 </form>

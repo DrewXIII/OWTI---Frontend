@@ -15,8 +15,12 @@
       class="justify-content-center mt-4"
       *ngFor="let local of searchLocalService.searchResults"
     >
-      <div class="card bg-primary text-light">
-        <a class="text-light" [routerLink]="['./details', local.fullName]">
+      <div id="card" class="card bg-primary text-light">
+        <a
+          id="name"
+          class="text-light"
+          [routerLink]="['./details', local.fullName]"
+        >
           <h5>{{ local.fullName }}</h5>
         </a>
       </div>
