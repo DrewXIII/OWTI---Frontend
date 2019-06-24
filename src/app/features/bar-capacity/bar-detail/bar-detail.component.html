@@ -11,7 +11,6 @@
       'background-color': 'rgba(0, 0, 0, 0.5)'
     }"
   >
-    <!-- [style.backgroundImage]="'url(' + barDetail.userProfile.avatarUrl[0] + ')'" -->
     <h1 class="d-flex justify-content-center pt-5">
       {{ barDetail && barDetail.userProfile && barDetail.userProfile.fullName }}
     </h1>
@@ -45,105 +44,126 @@
     </div>
   </div>
 
-  <div class="row">
-    <div id="contact" class="container-fluid ml-3">
-      <h2 class="mt-2">CONTACT</h2>
-      <div>
-        <div class="container my-3">
-          <div class="mb-1">
-            <span>
-              {{
-                barDetail &&
-                  barDetail.userProfile &&
-                  barDetail.userProfile.address &&
-                  barDetail.userProfile.address.streetAddress
-              }}
-            </span>
-          </div>
-          <div>
-            <span>
-              {{
-                barDetail &&
-                  barDetail.userProfile &&
-                  barDetail.userProfile.address &&
-                  barDetail.userProfile.address.addressLocality
-              }}
-            </span>
-            ,
-            <span>
-              {{
-                barDetail &&
-                  barDetail.userProfile &&
-                  barDetail.userProfile.address &&
-                  barDetail.userProfile.address.addressRegion
-              }}
-            </span>
-            ,
-            <span>
-              {{
-                barDetail &&
-                  barDetail.userProfile &&
-                  barDetail.userProfile.address &&
-                  barDetail.userProfile.address.postalCode
-              }}
-            </span>
+  <!-- CONTACT -->
+
+  <div class="container-fluid">
+    <div class="row justify-content-start">
+      <div class="col-10 col-md-6 col-lg-6">
+        <div class="mt-2">
+          <h3 class="mb-0">CONTACT</h3>
+        </div>
+        <div class="container">
+          <div id="contact" class="row justify-content-start">
+            <div class="container">
+              <!-- ADDRESS -->
+
+              <div class="my-3">
+                <div>
+                  <span>
+                    {{
+                      barDetail &&
+                        barDetail.userProfile &&
+                        barDetail.userProfile.address &&
+                        barDetail.userProfile.address.streetAddress
+                    }}
+                  </span>
+                </div>
+
+                <div>
+                  <div>
+                    <span>
+                      {{
+                        barDetail &&
+                          barDetail.userProfile &&
+                          barDetail.userProfile.address &&
+                          barDetail.userProfile.address.addressLocality
+                      }}
+                    </span>
+                    <span>
+                      {{
+                        barDetail &&
+                          barDetail.userProfile &&
+                          barDetail.userProfile.address &&
+                          barDetail.userProfile.address.addressRegion
+                      }}
+                    </span>
+                    <span>
+                      {{
+                        barDetail &&
+                          barDetail.userProfile &&
+                          barDetail.userProfile.address &&
+                          barDetail.userProfile.address.postalCode
+                      }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PHONE & EMAIL -->
+
+            <div class="container mb-3">
+              <div>
+                <span>
+                  {{
+                    barDetail &&
+                      barDetail.userProfile &&
+                      barDetail.userProfile.contact &&
+                      barDetail.userProfile.contact.phoneNumber
+                  }}
+                </span>
+                <span>
+                  {{
+                    barDetail &&
+                      barDetail.userProfile &&
+                      barDetail.userProfile.contact &&
+                      barDetail.userProfile.contact.email
+                  }}
+                </span>
+              </div>
+            </div>
+
+            <!-- OPENING HOURS -->
+
+            <div class="container mb-3">
+              <div>
+                {{
+                  barDetail &&
+                    barDetail.userProfile &&
+                    barDetail.userProfile.details &&
+                    barDetail.userProfile.details.openingHours
+                }}
+              </div>
+            </div>
+
+            <!-- VISIT WEBSITE -->
+
+            <div>
+              <a
+                id="visit"
+                class="d-flex"
+                class="btn btn-lg"
+                [href]="barDetail.userProfile.preferences.web"
+              >
+                <span
+                  id="web"
+                  class="justify-content-center align-items-center"
+                >
+                  VISIT WEBSITE
+                </span>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- CONTACT -->
-
-        <div class="container mb-3">
-          <div>
-            <span>
-              {{
-                barDetail &&
-                  barDetail.userProfile &&
-                  barDetail.userProfile.contact &&
-                  barDetail.userProfile.contact.phoneNumber
-              }}
-            </span>
-            <span class="ml-3">
-              {{
-                barDetail &&
-                  barDetail.userProfile &&
-                  barDetail.userProfile.contact &&
-                  barDetail.userProfile.contact.email
-              }}
-            </span>
-          </div>
-        </div>
-
-        <!-- OPENING HOURS -->
-
-        <div class="container mb-3">
-          <div>
-            {{
-              barDetail &&
-                barDetail.userProfile &&
-                barDetail.userProfile.details &&
-                barDetail.userProfile.details.openingHours
-            }}
-          </div>
-        </div>
-
-        <!-- VISIT WEBSITE -->
-
+      <div class="col-6">
         <div>
-          <a
-            id="visit"
-            class="d-flex"
-            class="btn btn-lg"
-            [href]="barDetail.userProfile.preferences.web"
-          >
-            <span id="web" class="justify-content-center align-items-center">
-              VISIT WEBSITE
-            </span>
-          </a>
+          <div>
+            mapa
+          </div>
         </div>
       </div>
     </div>
-    <!-- <div>
-      mapa
-    </div> -->
   </div>
 </div>

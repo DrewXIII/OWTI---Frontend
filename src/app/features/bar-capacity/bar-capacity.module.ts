@@ -10,8 +10,7 @@ import { SearchComponent } from "./search/search.component";
 // Import ng-circle-progress
 import { NgCircleProgressModule } from "ng-circle-progress";
 import { CircleProgressComponent } from "./bar-detail/circle-progress/circle-progress.component";
-import { AvatarComponent } from "./bar-detail/avatar/avatar.component";
-import { MapComponent } from './bar-detail/map/map.component';
+import { MapComponent } from "./bar-detail/map/map.component";
 
 const routes: Routes = [
   {
@@ -31,7 +30,6 @@ const routes: Routes = [
     PrincipalComponent,
     BarDetailComponent,
     CircleProgressComponent,
-    AvatarComponent,
     MapComponent
   ],
   imports: [

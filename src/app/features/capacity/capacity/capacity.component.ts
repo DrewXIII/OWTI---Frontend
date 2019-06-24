@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { CapacityService } from "src/app/core/services/capacity.service";
+import { AuthService } from "src/app/core/services/auth.service";
 
 @Component({
   selector: "ow-capacity",
@@ -14,7 +15,8 @@ export class CapacityComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private capacityService: CapacityService
+    private capacityService: CapacityService,
+    public authService: AuthService
   ) {}
 
   ngOnInit() {

@@ -10,6 +10,20 @@ nav a {
   color: black;
 }
 
+@media (max-width: 700px) {
+  img {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  img {
+    max-width: 60%;
+    height: auto;
+  }
+}
+
 // ANIMACIÓN
 
 body,

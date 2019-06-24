@@ -17,8 +17,7 @@ export class BarDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private localService: LocalService,
-    private capacityService: CapacityService
+    private localService: LocalService
   ) {}
 
   ngOnInit() {

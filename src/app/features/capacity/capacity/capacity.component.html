@@ -1,23 +1,43 @@
-<form
-  class="container-fluid p-5"
-  [formGroup]="updateUserCapacityForm"
-  [owMarkAsTouched]="updateUserCapacityForm"
-  (ngSubmit)="updateUserCapacity()"
->
-  <div class="row justify-content-start pt-3">
-    <div class="form-group col-3">
-      <h1>Current Capacity</h1>
-      <input
-        class="form-control"
-        type="text"
-        formControlName="capacity"
-        placeholder="Current Capacity"
-      />
-      <ow-validation-messages
-        [control]="updateUserCapacityForm.get('capacity')"
-      ></ow-validation-messages>
-    </div>
-  </div>
+<div class="container-fluid h-100">
+  <div class="d-flex flex-column">
+    <form
+      class="d-flex flex-column justify-content-center pt-5 pb-3"
+      [formGroup]="updateUserCapacityForm"
+      [owMarkAsTouched]="updateUserCapacityForm"
+      (ngSubmit)="updateUserCapacity()"
+    >
+      <div class="d-flex justify-content-center pt-3">
+        <div class="form-group">
+          <h1 class="text-center">Current Capacity</h1>
+          <div class="row justify-content-center">
+            <input
+              class="form-control col-3"
+              type="number"
+              formControlName="capacity"
+              placeholder="..."
+            />
+            <ow-validation-messages
+              [control]="updateUserCapacityForm.get('capacity')"
+            ></ow-validation-messages>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-primary col-4 col-sm-4 col-md-1 col-lg-1"
+        >
+          Save
+        </button>
+      </div>
+    </form>
 
-  <button type="submit" class="btn btn-primary">Save</button>
-</form>
+    <button type="button" class="btn btn-link" routerLink="/my-account">
+      My Account
+    </button>
+
+    <button type="button" class="btn btn-link" (click)="authService.logout()">
+      Logout
+    </button>
+  </div>
+</div>
